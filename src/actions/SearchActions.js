@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-18T00:49:26+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-18T22:15:29+05:30
+ * @Last modified time: 2019-04-20T03:59:00+05:30
  */
 
 import {
@@ -10,14 +10,19 @@ import {
   SUBMIT_FORM_DATA,
   FORM_SUBMISSION_ERROR,
   INIT_FORM_SUBMISSION,
-  FORM_SUBMISSION_SUCCESS
+  FORM_SUBMISSION_SUCCESS,
+  GET_RESULTS_STACK
 } from "./types";
 
 export const submitFormData = formData => async (dispatch, getState) => {
   const { location } = formData;
   const callback = function(results) {
     // setPositionObj(results[0]);
-    console.log(results, "fetch results");
+    dispatch({
+      type: GET_RESULTS_STACK,
+      payload: results[0],
+      mapObject: getState().mapData.initialMapData
+    });
   };
 
   const getGeoCode = (location, callback) => {

@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-18T00:54:07+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-18T02:41:45+05:30
+ * @Last modified time: 2019-04-20T02:28:27+05:30
  */
 import React from "react";
 
@@ -11,9 +11,9 @@ export const renderInputFields = ({
   type,
   placeholder,
   name,
-  input,
   pattern,
-  meta: { touched, error, warning }
+  meta: { touched, error, warning },
+  input
 }) => {
   return (
     <div>

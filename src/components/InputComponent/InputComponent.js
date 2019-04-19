@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-17T23:57:06+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-18T02:36:55+05:30
+ * @Last modified time: 2019-04-20T03:34:36+05:30
  */
 
 import React, { Fragment, Component } from "react";
@@ -42,8 +42,11 @@ class InputComponent extends Component {
     );
   }
 }
-function mapStateToProps({ dropDownValues, form }) {
-  return {};
+function mapStateToProps({ searchData, form }) {
+  console.log(searchData, "data Stack");
+  return {
+    searchResults: searchData.getResultsStack
+  };
 }
 
 function mapDispatchToProps(dispatch) {

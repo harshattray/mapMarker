@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-03-21T12:32:56+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-18T02:37:44+05:30
+ * @Last modified time: 2019-04-20T03:36:59+05:30
  */
 
 import React, { Component } from "react";
@@ -58,7 +58,6 @@ class App extends Component {
                 <div className="mapComponent" id="mapComponent" />
               </div>
               {mapStackObject && <MapComponent googleMaps={mapStackObject} />}
-              <InputComponent />
             </div>
           </div>
         </main>
