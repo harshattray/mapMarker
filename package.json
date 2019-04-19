@@ -3,15 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-google-maps": "^9.4.5",
+    "react-redux": "^7.0.2",
+    "react-scripts": "2.1.8",
+    "redux": "^4.0.1",
+    "redux-form": "^8.2.0",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "clean": "rm -rf deploy",
+    "build": "npm run clean && webpack -p --env production",
+    "start": "webpack-dev-server --hot --inline --port 3000",
+    "commit_deploy": "git add deploy -A && git commit -m \"deploy files at `date`\" -n > /dev/null 2>&1; exit 0",
+    "ghpages": "git subtree split --prefix deploy/ -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages",
+    "deploy": "npm run build && npm run commit_deploy && npm run ghpages",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +31,28 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.1",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-0": "^7.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.0-beta.6",
+    "css-loader": "^1.0.0",
+    "enzyme": "^3.6.0",
+    "enzyme-to-json": "^3.3.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^2.24.1",
+    "react-test-renderer": "^16.8.6",
+    "style-loader": "^0.13.2",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "url-loader": "^1.1.1",
+    "webpack": "3.5.6",
+    "webpack-dev-server": "2.8.2"
+  }
 }
