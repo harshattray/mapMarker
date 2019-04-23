@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-03-21T12:32:56+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-16T01:06:27+05:30
+ * @Last modified time: 2019-04-22T03:01:08+05:30
  */
 
 
@@ -75,7 +75,6 @@ textarea {
 	font-size: inherit;
 	line-height: inherit;
 }
-
 
 img {
 	vertical-align: middle;
@@ -337,6 +336,9 @@ label {
 	transition-duration: .5s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
+.search {
+	padding-left: 10px !important
+}
 
 .slider.closed {
 	max-height: 0;
@@ -350,7 +352,9 @@ h3 {
 .markers-list {
 	display: flex;
 	flex-wrap: wrap;
+	list-style: none;
 }
+
 .markers-list li {
 	display: flex;
 }

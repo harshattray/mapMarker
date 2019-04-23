@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-03-21T12:32:56+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-20T03:36:59+05:30
+ * @Last modified time: 2019-04-23T19:45:00+05:30
  */
 
 import React, { Component } from "react";
@@ -12,13 +12,10 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { setMapObject } from "./actions/MapActions";
 import MapComponent from "./components/MapComponent/MapComponent";
-import InputComponent from "./components/InputComponent/InputComponent";
-
-console.log(InputComponent);
 
 class App extends Component {
   componentDidMount() {
-    const API_KEY = "AIzaSyBO1dKtjJHzpgKLy2vidAWtSr8SMbxAFPM";
+    const API_KEY = "AIzaSyB6LANKwIdPIuHgkz0mMPEKBJb6ng_3t-I";
     if (!window.google) {
       let s = document.createElement("script");
       s.type = "text/javascript";
@@ -66,9 +63,9 @@ class App extends Component {
   }
 }
 
-function mapStateToProps({ mapData }) {
+function mapStateToProps({ searchData }) {
   return {
-    mapStackObject: mapData.initialMapData
+    mapStackObject: searchData.initialMapData
   };
 }
 
