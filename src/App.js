@@ -2,11 +2,10 @@
  * @Author: harsha
  * @Date:   2019-03-21T12:32:56+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-23T19:45:00+05:30
+ * @Last modified time: 2019-04-24T03:00:51+05:30
  */
 
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";

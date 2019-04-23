@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-18T00:48:33+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T00:15:57+05:30
+ * @Last modified time: 2019-04-24T02:57:04+05:30
  */
 import {
   GET_RESULTS_STACK,
@@ -21,11 +21,23 @@ import {
   deleteCoords
 } from "../helpers/MapObjBuilder";
 
+/**
+ * [initial_state State object with initial values]
+ * @type {Object}
+ */
+
 const initial_state = {
   markersArray: [],
   coOrdsArray: [],
   isEditing: false
 };
+
+/**
+ * [Search reducer]
+ * @param  {Object} [state=initial_state] [initial state object]
+ * @param  {Object} action                [action object with types and payload]
+ * @return {Object}                       [description]
+ */
 
 export default (state = initial_state, action) => {
   switch (action.type) {

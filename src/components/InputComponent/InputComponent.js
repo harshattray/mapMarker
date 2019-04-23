@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-17T23:57:06+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T01:45:49+05:30
+ * @Last modified time: 2019-04-24T02:46:51+05:30
  */
 
 import React, { Fragment, Component } from "react";
@@ -14,7 +14,17 @@ import { renderInputFields } from "../renderInputFieldComponent/renderInputField
 import { submitFormData } from "../../actions/SearchActions";
 import { validate } from "../../helpers/validate";
 
+/**
+ * [InputComponent handles both location search and edit location]
+ * @extends Component
+ */
+
 class InputComponent extends Component {
+  /**
+   * [handleLocationSubmit submit function triggers submitFormData based on params passed to it]
+   * @param  {[type]} data [description]
+   * @return {[type]}      [description]
+   */
   handleLocationSubmit = data => {
     if (this.props.point) {
       this.props.submitFormData(data, this.props.point, this.props.index);

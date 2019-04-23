@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-21T18:16:31+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-23T23:54:18+05:30
+ * @Last modified time: 2019-04-24T02:29:33+05:30
  */
 
 import React, { Fragment, Component } from "react";
@@ -13,6 +13,11 @@ import { cancelEditInput, triggerEditInput } from "../../actions/MapActions";
 import { deleteMarker } from "../../actions/SearchActions";
 import InputComponent from "../InputComponent/InputComponent";
 
+/**
+ * [MarkerListComponent renders list of locations based on props]
+ * @extends Component
+ */
+
 class MarkerListComponent extends Component {
   render() {
     const {
@@ -22,7 +27,6 @@ class MarkerListComponent extends Component {
       cancelEditInput,
       deleteMarker
     } = this.props;
-    console.log(this.props);
     return (
       <Fragment>
         {markerListStack && (
@@ -49,6 +53,11 @@ class MarkerListComponent extends Component {
     );
   }
 }
+
+/**
+ * [MarkerListBlock Card renderer component]
+ * @param {[type]} props [description]
+ */
 
 const MarkerListBlock = props => {
   const {

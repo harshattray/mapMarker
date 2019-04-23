@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-18T00:49:26+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T00:01:36+05:30
+ * @Last modified time: 2019-04-24T02:24:37+05:30
  */
 
 import {
@@ -15,6 +15,14 @@ import {
   EDIT_RESULTS_STACK,
   DELETE_MARKER
 } from "./types";
+
+/**
+ * [submitFormData Contains form data for initial Input form and point,index values along with form data for Edit Input forn]
+ * @param  {[type]} formData [FormData object]
+ * @param  {[type]} point    [description]
+ * @param  {[type]} index    [description]
+ * @return {[type]}          [description]
+ */
 
 export const submitFormData = (formData, point, index) => async (
   dispatch,
@@ -43,6 +51,13 @@ export const submitFormData = (formData, point, index) => async (
     }
   };
 
+  /**
+   * [getGeoCode generates Object based on location values]
+   * @param  {[type]}   location [description]
+   * @param  {Function} callback [description]
+   * @return {[type]}            [description]
+   */
+
   const getGeoCode = (location, callback) => {
     const geocoder = new window.google.maps.Geocoder();
 
@@ -55,6 +70,12 @@ export const submitFormData = (formData, point, index) => async (
   };
   getGeoCode({ address: location }, callback);
 };
+
+/**
+ * [deleteMarker triggers DeleteMarker based on index values and passes updates mapObject]
+ * @param  {[type]} index [index value for corresponding markList results]
+ * @return {[type]}       [description]
+ */
 
 export const deleteMarker = index => (dispatch, getState) => {
   dispatch({

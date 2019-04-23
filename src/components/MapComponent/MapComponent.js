@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-15T16:08:10+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T01:37:11+05:30
+ * @Last modified time: 2019-04-24T02:28:13+05:30
  */
 
 import React, { Fragment, Component } from "react";
@@ -12,6 +12,11 @@ import { Button } from "semantic-ui-react";
 import InputComponent from "../InputComponent/InputComponent";
 import MarkerListComponent from "../MarkerListComponent/MarkerListComponent";
 import { cancelEditInput } from "../../actions/MapActions";
+
+/**
+ * [MapComponent Main Map component with InputComponent and MarkerListComponent ]
+ * @extends Component
+ */
 
 class MapComponent extends Component {
   render() {
