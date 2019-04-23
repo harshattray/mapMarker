@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-15T16:08:10+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T00:11:47+05:30
+ * @Last modified time: 2019-04-24T01:37:11+05:30
  */
 
 import React, { Fragment, Component } from "react";
@@ -22,7 +22,11 @@ class MapComponent extends Component {
           {isEditing ? (
             <div>
               <InputComponent point={point} index={index} />
-              <Button basic color="blue" onClick={e => cancelEditInput()}>
+              <Button
+                className="cancel"
+                color="red"
+                onClick={e => cancelEditInput()}
+              >
                 Cancel
               </Button>
             </div>

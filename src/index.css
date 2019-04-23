@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-03-21T12:32:56+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-22T03:01:08+05:30
+ * @Last modified time: 2019-04-24T01:44:08+05:30
  */
 
 
@@ -337,7 +337,10 @@ label {
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 .search {
-	padding-left: 10px !important
+	margin-top: 10px !important
+}
+.cancel {
+	margin-top: 10px !important
 }
 
 .slider.closed {

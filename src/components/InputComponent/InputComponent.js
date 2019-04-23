@@ -2,16 +2,17 @@
  * @Author: harsha
  * @Date:   2019-04-17T23:57:06+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T00:24:46+05:30
+ * @Last modified time: 2019-04-24T01:45:49+05:30
  */
 
 import React, { Fragment, Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { Button } from "semantic-ui-react";
 import { reduxForm, Field, reset } from "redux-form";
 import { renderInputFields } from "../renderInputFieldComponent/renderInputFieldComponent";
 import { submitFormData } from "../../actions/SearchActions";
-import { Button } from "semantic-ui-react";
+import { validate } from "../../helpers/validate";
 
 class InputComponent extends Component {
   handleLocationSubmit = data => {
@@ -22,7 +23,7 @@ class InputComponent extends Component {
     }
   };
   render() {
-    const { handleSubmit, point } = this.props;
+    const { handleSubmit, point, invalid, submitting } = this.props;
     return (
       <form
         name="locationSearchForm"
@@ -33,15 +34,17 @@ class InputComponent extends Component {
         <Field
           name="location"
           component={renderInputFields}
-          placeholder="First Name"
+          placeholder={
+            point ? "Enter Location to be updated" : "Enter Location here"
+          }
           type="text"
           required
           label={point ? "Edit Location" : "Enter Location"}
           className="column"
         />
-        <span className="search">
-          <Button>Search</Button>
-        </span>
+        <Button className="search" disabled={invalid} loading={submitting}>
+          Search
+        </Button>
       </form>
     );
   }
@@ -60,6 +63,7 @@ const afterSubmitdata = (result, dispatch) =>
   dispatch(reset("locationSearchForm"));
 
 InputComponent = reduxForm({
+  validate,
   form: "locationSearchForm",
   destroyOnUnmount: false,
   onSubmitSuccess: afterSubmitdata
