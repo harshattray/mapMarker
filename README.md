@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Overview
+
+Map marker is built utilising the google maps api with react, redux and webpack
+
 ## Scripts
 
 In the project directory, you can run:
@@ -32,3 +36,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 App is ready to be deployed!
+
+### `npm run deploy`
+
+This is a custom script that automates the deployment to github pages. The deployment build can be seen in the `gh-pages` branch
