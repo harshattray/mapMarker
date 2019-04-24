@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-17T23:57:06+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T02:46:51+05:30
+ * @Last modified time: 2019-04-24T23:59:51+05:30
  */
 
 import React, { Fragment, Component } from "react";
@@ -10,7 +10,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { Button } from "semantic-ui-react";
 import { reduxForm, Field, reset } from "redux-form";
-import { renderInputFields } from "../renderInputFieldComponent/renderInputFieldComponent";
+import { RenderInputFields } from "../renderInputFieldComponent/renderInputFieldComponent";
 import { submitFormData } from "../../actions/SearchActions";
 import { validate } from "../../helpers/validate";
 
@@ -43,7 +43,7 @@ class InputComponent extends Component {
       >
         <Field
           name="location"
-          component={renderInputFields}
+          component={RenderInputFields}
           placeholder={
             point ? "Enter Location to be updated" : "Enter Location here"
           }

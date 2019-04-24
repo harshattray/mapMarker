@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-18T00:48:33+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T02:57:04+05:30
+ * @Last modified time: 2019-04-25T02:50:40+05:30
  */
 import {
   GET_RESULTS_STACK,
@@ -26,7 +26,7 @@ import {
  * @type {Object}
  */
 
-const initial_state = {
+export const initial_state = {
   markersArray: [],
   coOrdsArray: [],
   isEditing: false

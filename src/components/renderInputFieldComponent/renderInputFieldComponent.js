@@ -2,13 +2,13 @@
  * @Author: harsha
  * @Date:   2019-04-18T00:54:07+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T02:31:45+05:30
+ * @Last modified time: 2019-04-25T00:00:00+05:30
  */
 import React, { Fragment } from "react";
 import { Input } from "semantic-ui-react";
 
 /**
- * [renderInputFields description]
+ * [RenderInputFields description]
  * @param  {[type]} label       [Conditionally renders label based on props]
  * @param  {[type]} type        [Type of form to be rendered]
  * @param  {[type]} placeholder [Conditionally rendered placeholder based on props]
@@ -21,7 +21,7 @@ import { Input } from "semantic-ui-react";
  * @return {[type]}             [description]
  */
 
-export const renderInputFields = ({
+export const RenderInputFields = ({
   label,
   type,
   placeholder,

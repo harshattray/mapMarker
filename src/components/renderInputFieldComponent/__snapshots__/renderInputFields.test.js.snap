@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component => RenderInputFields should match snapshot 1`] = `
+<div
+  class="ui labeled input"
+>
+  <div
+    class="ui label label"
+  >
+    MOCK_LABEL
+  </div>
+  <input
+    name="MOCK_NAME"
+    type="text"
+  />
+</div>
+`;
