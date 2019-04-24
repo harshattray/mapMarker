@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-16T01:45:34+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T02:20:44+05:30
+ * @Last modified time: 2019-04-25T03:32:03+05:30
  */
 import {
   SET_MAP_OBJECT,

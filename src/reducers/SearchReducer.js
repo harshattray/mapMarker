@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-18T00:48:33+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-25T02:50:40+05:30
+ * @Last modified time: 2019-04-25T03:45:16+05:30
  */
 import {
   GET_RESULTS_STACK,
@@ -10,7 +10,8 @@ import {
   CANCEL_EDITING,
   SET_MAP_OBJECT,
   IS_EDITING,
-  DELETE_MARKER
+  DELETE_MARKER,
+  MAP_RESPONSE_ERROR
 } from "../actions/types";
 import {
   mapCoOrdsStack,
@@ -29,7 +30,8 @@ import {
 export const initial_state = {
   markersArray: [],
   coOrdsArray: [],
-  isEditing: false
+  isEditing: false,
+  mapError: ""
 };
 
 /**
@@ -51,7 +53,8 @@ export default (state = initial_state, action) => {
         ...state,
         getResultsStack: action.payload,
         markersArray: state.markersArray.concat(action.marker),
-        coOrdsArray: [...state.coOrdsArray, action.payload]
+        coOrdsArray: [...state.coOrdsArray, action.payload],
+        mapError: action.mapError
       };
     case EDIT_RESULTS_STACK:
       return {
@@ -69,7 +72,8 @@ export default (state = initial_state, action) => {
           state.coOrdsArray,
           action.editingIndex,
           action.payload
-        )
+        ),
+        mapError: action.mapError
       };
     case IS_EDITING:
       return {
@@ -92,6 +96,11 @@ export default (state = initial_state, action) => {
           state.markersArray
         ),
         coOrdsArray: deleteCoords(action.deletingIndex, state.coOrdsArray)
+      };
+    case MAP_RESPONSE_ERROR:
+      return {
+        ...state,
+        mapError: action.payload
       };
 
     default:

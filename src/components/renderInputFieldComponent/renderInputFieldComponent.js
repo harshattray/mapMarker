@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-18T00:54:07+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-25T00:00:00+05:30
+ * @Last modified time: 2019-04-25T03:39:27+05:30
  */
 import React, { Fragment } from "react";
 import { Input } from "semantic-ui-react";
@@ -27,6 +27,7 @@ export const RenderInputFields = ({
   placeholder,
   name,
   pattern,
+  mapError,
   meta: { touched, error, warning },
   input
 }) => {
@@ -34,6 +35,7 @@ export const RenderInputFields = ({
     <Fragment>
       <Input type={type} label={label} placeholder={placeholder} {...input} />
       <div>{touched && error && <i>{error}</i>}</div>
+      <div>{mapError && <i>{mapError}</i>}</div>
     </Fragment>
   );
 };

@@ -2,7 +2,7 @@
  * @Author: harsha
  * @Date:   2019-04-17T23:57:06+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T23:59:51+05:30
+ * @Last modified time: 2019-04-25T03:37:05+05:30
  */
 
 import React, { Fragment, Component } from "react";
@@ -33,7 +33,7 @@ class InputComponent extends Component {
     }
   };
   render() {
-    const { handleSubmit, point, invalid, submitting } = this.props;
+    const { handleSubmit, point, invalid, submitting, mapError } = this.props;
     return (
       <form
         name="locationSearchForm"
@@ -51,6 +51,7 @@ class InputComponent extends Component {
           required
           label={point ? "Edit Location" : "Enter Location"}
           className="column"
+          mapError={mapError ? mapError : ""}
         />
         <Button className="search" disabled={invalid} loading={submitting}>
           Search
@@ -61,7 +62,8 @@ class InputComponent extends Component {
 }
 function mapStateToProps({ searchData, form }) {
   return {
-    searchResults: searchData.getResultsStack
+    searchResults: searchData.getResultsStack,
+    mapError: searchData.mapError
   };
 }
 

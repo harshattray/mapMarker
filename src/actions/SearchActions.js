@@ -2,18 +2,17 @@
  * @Author: harsha
  * @Date:   2019-04-18T00:49:26+05:30
  * @Last modified by:   harsha
- * @Last modified time: 2019-04-24T02:24:37+05:30
+ * @Last modified time: 2019-04-25T03:46:39+05:30
  */
 
 import {
   SHOW_MORE_FIELDS,
   SUBMIT_FORM_DATA,
   FORM_SUBMISSION_ERROR,
-  INIT_FORM_SUBMISSION,
-  FORM_SUBMISSION_SUCCESS,
   GET_RESULTS_STACK,
   EDIT_RESULTS_STACK,
-  DELETE_MARKER
+  DELETE_MARKER,
+  MAP_RESPONSE_ERROR
 } from "./types";
 
 /**
@@ -39,14 +38,16 @@ export const submitFormData = (formData, point, index) => async (
         type: EDIT_RESULTS_STACK,
         payload: results[0],
         editingIndex: index,
-        marker: marker
+        marker: marker,
+        mapError: ""
       });
     } else {
       dispatch({
         type: GET_RESULTS_STACK,
         payload: results[0],
         mapObject: getState().searchData.initialMapData,
-        marker: marker
+        marker: marker,
+        mapError: ""
       });
     }
   };
@@ -65,6 +66,10 @@ export const submitFormData = (formData, point, index) => async (
       if (status === "OK") {
         callback(results);
       } else {
+        dispatch({
+          type: MAP_RESPONSE_ERROR,
+          payload: "Please enter a valid location"
+        });
       }
     });
   };
